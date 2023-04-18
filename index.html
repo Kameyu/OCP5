@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+	<meta charset="UTF-8">
 	<title>Nina Carducci - Photographe</title>
 	<meta name="description" content="Nina Carducci est une photographe basée à Bordeaux. Vous avez un projet de mariage, d'événement, ou voulez réaliser un shooting photo ? Je travaillerai avec vous afin d'immortaliser vos meilleurs moments.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="./assets/style.css">
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
-	<meta charset="UTF-8">
-	<script src="./assets/bootstrap/bootstrap.bundle.js" async></script>
-	<link rel="preconnect" href="https://code.jquery.com" crossorigin>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin defer></script>
-	<script src="./assets/maugallery.js" async></script>
-	<script src="./assets/scripts.js" async></script>
+
+	<script src="./assets/bootstrap/bootstrap.bundle.min.js" async></script>
+	<!-- <script src="./assets/gallery.js" ></script> -->
 	<meta name="theme-color" content="#F6D2B8"/>
 </head>
 <body>
@@ -26,7 +25,13 @@
 			<li><a href="#gallery">Galerie</a></li>
 			<li><a href="#services">Service</a></li>
 			<li><a href="#contact">Contact</a></li>
-			<li><a class="social-link" href="https://www.instagram.com/ninacarducci.photo/?hl=fr" target="_blank"><img src="assets/images/instagram.png" alt=""></a></li>
+			<li><a class="social-link" href="https://www.instagram.com/ninacarducci.photo/?hl=fr"target="_blank">
+				<img src="assets/images/instagram.webp"
+					srcset="assets/images/instagram.webp 45w,
+							assets/images/instagram_small.webp 20w"
+					alt="Instagram de Nina Carducci">
+				</a>
+			</li>
 		</ul>
 	</div>
 </div>
@@ -40,13 +45,22 @@
 		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash.webp" class="d-block w-100" alt="Homme d'affaires traversant un passage piétons">
+				<img src="./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash.webp"
+					srcset = "./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash_small.webp 824w,
+							  ./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash.webp 1920w"
+					class="d-block w-100 h-100" alt="Homme d'affaires traversant un passage piétons">
 			</div>
 			<div class="carousel-item">
-				<img src="./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash.webp" class="d-block w-100" alt="Groupe de spectateurs à un concert">
+				<img src="./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash.webp"
+					srcset = "./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash_small.webp 824w,
+							  ./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash.webp 1920w"
+					class="d-block w-100 h-100" alt="Groupe de spectateurs à un concert">
 			</div>
 			<div class="carousel-item">
-				<img src="./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash.webp" class="d-block w-100" alt="Jeunes mariés s'embrassant façon lean kiss">
+				<img src="./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash.webp"
+					srcset = "./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash_small.webp 824w,
+						  ./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash.webp 1920w"
+					class="d-block w-100 h-100" alt="Jeunes mariés s'embrassant à la renverse">
 			</div>
 		</div>
 		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -61,7 +75,8 @@
 </div>
 <div id="about">
 	<div class="picture left">
-		<img src="./assets/images/nina.webp" alt="Portrait de Nina Carducci">
+		<img src="./assets/images/nina.webp"
+			 alt="Portrait de Nina Carducci">
 	</div>
 	<div id="about-me">
 		<h3 class="about-me__title">A propos de moi</h3>
