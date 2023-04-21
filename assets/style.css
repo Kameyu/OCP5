@@ -20,7 +20,7 @@ body {
 
 .top-header .name {
 	font-size: 26px;
-	font-weight: 500;
+	font-weight: 400;
 }
 
 .nav ul {
@@ -72,7 +72,7 @@ body {
 
 .picture img {
 	width: 100%;
-	height: 100%;
+	height: auto;
 }
 
 #about-me {
@@ -90,30 +90,50 @@ body {
 	width: 60%;
 	font-size: 1rem;
 }
-
 #about-me p {
 	width: 80%;
 	font-size: 14px;
-}
-
-#gallery {
-	/*	min-height: 100vh; */
 }
 .title{
 	text-align: center;
 	padding-block: 2em;
 }
 .gallery .nav {
+	margin: auto;
+}
+
+.nav .nav-pills {
+	display: flex;
 	justify-content: center;
 }
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-	color: #fff;
-	background-color: #BEB45A;
-	border-radius:0 ;
+
+.nav-pills, .filter-item.active, .nav-pills .show > .filter-item {
+	color: #FFF;
+	background-color: #807833;
+	border-radius:0;
 }
-.nav-pills .nav-link {
+
+.filter-item {
+	padding-inline: 10px;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	outline: none;
+	border-radius: 0;
+	border: none;
+	background-color: #FFF;
+}
+
+.filter-item:hover {
+	color: #FFF;
+	background-color: #807833;
+	border-radius:0;
+	cursor: pointer;
+}
+
+.nav-link {
 	color: #000
 }
+
 .item-column {
 	position: relative;
 	margin-bottom: 0 !important;
@@ -125,21 +145,90 @@ body {
 	padding-bottom: 100%;
 
 }
+
+#gallery {
+	display: flex;
+	flex-flow: column nowrap;
+	max-width: calc(100% - 424px - .5em);
+	margin: auto;
+}
+
+.gallery-container {
+	display: flex;
+	flex-flow: row wrap;
+	gap: .5rem;
+	justify-content: center;
+}
+
 .gallery-item {
-	position: absolute;
+	max-width: 424px;
+	max-height: 424px;
+}
+
+.gallery-item img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
-	padding: .5em;
 }
-.mg-prev, .mg-next {
-	width: 30px;
-	height: 30px;
-	border-radius: 00%;
+
+.filters {
+	display: flex;
+	list-style-type: none;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	margin: 1.5rem auto 1.5rem auto;
+	gap: 10px;
+}
+
+#modal {
+	display: none;
+	position: fixed;
+	z-index: 1001;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.3);
+
+	/* when flex */
 	justify-content: center;
 	align-items: center;
+
+	animation: fadeIn .3s both;
+}
+
+#modal-wrapper {
+	background-color: white;
+	padding: 1em 1em;
+	border-radius: .6em;
+	box-sizing: border-box;
+	max-width: 30%;
+	/* height: 60%; */
+	animation: slideIn .3s both;
+}
+
+.mod-btn {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	position:absolute;
+	top:50%;
+	width: 30px;
+	height: 30px;
 	font-size: 24px;
+	border-radius: .2em;
+	cursor:pointer;
+	background:white;
+	border: none;
+	outline: none;
+}
+
+.arr-right {
+	right:-15px;
+}
+
+.arr-left {
+	left:-15px;
 }
 
 .quote {
@@ -248,9 +337,11 @@ form textarea {
 	font-size: 1.2em;
 	margin-bottom: 20px;
 }
+
 input[type="submit"] {
 	background-color: #BEB45A;
-	padding: .5em 1em
+	padding: .5em 1em;
+	margin-bottom: 3em;
 }
 
 .tarif {
@@ -271,7 +362,7 @@ input[type="submit"] {
 		margin-top: 0;
 		margin-bottom: 1em;
 	}
-	#about-me h6, #about-me p {
+	#about-me h3, #about-me p {
 		width: 100%;
 	}
 }
@@ -333,6 +424,9 @@ input[type="submit"] {
 		right: 0;
 		z-index: -1;
 	}
+	#modal-wrapper {
+		max-width: 60%;
+	}
 }
 
 @media all and (max-width: 650px) {
@@ -368,6 +462,10 @@ input[type="submit"] {
 	.picture {
 		width: 80%;
 	}
+
+	#modal-wrapper {
+	max-width: 90%;
+	}
 }
 
 @font-face {
@@ -377,7 +475,7 @@ input[type="submit"] {
 	font-display: swap;
   }
 
-  @font-face {
+@font-face {
 	font-family: "Spectral";
 	src: url("./fonts/Spectral-Regular.ttf") format("truetype");
 	font-weight:300;
@@ -385,7 +483,7 @@ input[type="submit"] {
 	font-display: swap;
   }
   
-  @font-face {
+@font-face {
 	font-family: "Spectral";
 	src: url("./fonts/Spectral-LightItalic.ttf") format("truetype");
 	font-weight: 300;
@@ -393,7 +491,7 @@ input[type="submit"] {
 	font-display: swap;
   }
   
-  @font-face {
+@font-face {
 	font-family: "Spectral";
 	src: url("./fonts/Spectral-Italic.ttf") format("truetype");
 	font-weight: 400;
@@ -401,10 +499,38 @@ input[type="submit"] {
 	font-display: swap;
   }
   
-  @font-face {
+@font-face {
 	font-family: "Spectral";
 	src: url("./fonts/Spectral-ExtraBoldItalic.ttf") format("truetype");
 	font-weight: 800;
 	font-style: italic;
 	font-display: swap;
   }
+
+#modal[aria-hidden="true"] {
+	animation-name: fadeOut;
+}
+
+#modal[aria-hidden="true"] .modal-wrapper {
+	animation-name: slideOut;
+}
+
+@keyframes fadeIn {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+@keyframes fadeOut {
+	from {opacity: 1;}
+	to {opacity: 0;}
+}
+
+@keyframes slideIn {
+	from {transform: translateY(-4em);}
+	to {transform: translateY(0);}
+}
+
+@keyframes slideOut {
+	from {transform: translateY(0);}
+	to {transform: translateY(4em);}
+}
