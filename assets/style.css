@@ -351,6 +351,12 @@ input[type="submit"] {
     line-height: 1.2;
 }
 
+@media all and (min-width: 1920px) {
+	#modal-wrapper {
+		max-width: calc(1920px*.3);
+	}
+}
+
 @media all and (max-width: 1180px) {
 	.picture {
 		flex : 2;
